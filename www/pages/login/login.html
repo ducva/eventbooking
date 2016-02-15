@@ -1,0 +1,24 @@
+<ion-view title="Please sign in">
+    <ion-content class="padding">
+        <form name="loginForm" ng-submit="vm.login(loginForm.$valid)" novalidate>
+            <div class="list">
+                <label class="item item-input">
+                    <input type="email" placeholder="Enter Email" name="username"
+                        ng-model="vm.user.username" required>
+                </label>
+                <p ng-show="loginForm.username.$invalid && !loginForm.username.$pristine"
+                    class="help-block">Email is required and must be valid.</p>
+                <label class="item item-input">
+                    <input type="password" placeholder="Enter Password" name="password"
+                        ng-model="vm.user.password" required>
+                </label>
+                <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine"
+                    class="help-block">Password is required.</p>
+            </div>
+            <button class="button button-full button-balanced" type="submit" ng-disabled="loginForm.$invalid">
+                Login
+            </button>
+            <button class="button button-positive button-clear button-full" ui-sref="public.register">Register now!</button>
+        </form>
+    </ion-content>
+</ion-view>
