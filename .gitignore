@@ -4,7 +4,6 @@
 node_modules/
 platforms/
 plugins/
-node_modules
 plugins/cordova-plugin-console
 plugins/cordova-plugin-device
 plugins/cordova-plugin-splashscreen
@@ -12,6 +11,3 @@ plugins/cordova-plugin-statusbar
 plugins/cordova-plugin-whitelist
 plugins/fetch.json
 plugins/ionic-plugin-keyboard
-node_modules/angular
-node_modules/angularfire
-node_modules/firebase
