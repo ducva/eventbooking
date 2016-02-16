@@ -3,9 +3,9 @@ angular
     .module('starter')
     .controller('LogInCtrl', LogInController);
 
-LogInController.$inject = ['$scope', 'AuthService'];
+LogInController.$inject = ['$state', 'AuthService'];
 
-function LogInController($scope, AuthService) {
+function LogInController($state, AuthService) {
   var vm = this;
 
   vm.user = {
@@ -25,6 +25,7 @@ function LogInController($scope, AuthService) {
     AuthService.auth(vm.user).then(function(response){
       // on success
       console.log(response);
+      $state.go('dashboard', {username:vm.user.username});
     }).catch(function(error){
       // on error
       console.log(error);

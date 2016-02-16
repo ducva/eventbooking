@@ -11,6 +11,14 @@ function config($stateProvider, $urlRouterProvider) {
         controllerAs: 'vm'
     });
 
+    $stateProvider.state('dashboard', {
+        url: '/user',
+        templateUrl: 'pages/dashboard/dashboard.html',
+        controller: 'DashboardCtrl',
+        controllerAs: 'vm',
+        params: {username:''}
+    });
+
     $urlRouterProvider.otherwise('/login');
 }
 })();

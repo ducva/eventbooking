@@ -1,0 +1,17 @@
+<ion-view view-title="Dashboard">
+    <ion-content>
+        Hello, {{vm.username}}
+        <ion-list>
+            <ion-item ng-repeat="e in vm.events">
+
+                <ion-card ng-click="vm.viewDetail(e)">
+                        <h2>{{e.name}} - {{e.date}}</h2>
+                        <h2>{{e.location}}</h2>
+                        <p>
+                            {{e.room}}
+                        </p>
+                </ion-card>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
