@@ -25,6 +25,7 @@ function LogInController($state, AuthService) {
     AuthService.auth(vm.user).then(function(response){
       // on success
       console.log(response);
+
       $state.go('dashboard', {username:vm.user.username});
     }).catch(function(error){
       // on error

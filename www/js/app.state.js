@@ -18,7 +18,6 @@ function config($stateProvider, $urlRouterProvider) {
         controllerAs: 'vm',
         params: {username:''}
     });
-
     $urlRouterProvider.otherwise('/login');
 }
 })();

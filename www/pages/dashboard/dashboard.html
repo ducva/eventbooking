@@ -1,17 +1,26 @@
 <ion-view view-title="Dashboard">
     <ion-content>
         Hello, {{vm.username}}
-        <ion-list>
+        <ion-list ng-if="!vm.selectedItem">
             <ion-item ng-repeat="e in vm.events">
 
                 <ion-card ng-click="vm.viewDetail(e)">
-                        <h2>{{e.name}} - {{e.date}}</h2>
-                        <h2>{{e.location}}</h2>
-                        <p>
-                            {{e.room}}
-                        </p>
+                    <h2>{{e.name}} - {{e.date}}</h2>
+                    <h2>{{e.location}}</h2>
+                    <p>
+                        {{e.room}}
+                    </p>
                 </ion-card>
             </ion-item>
         </ion-list>
+
+        <div  ng-if="vm.selectedItem">
+            <h2>{{vm.selectedItem.name}} - {{vm.selectedItem.date}}</h2>
+            <h2>{{vm.selectedItem.location}}</h2>
+            <p>
+                {{vm.selectedItem.room}}
+            </p>
+            <button ng-click="vm.back()" class="button button-block button-positive" value="Back" type="button">Back</button>
+        </div>
     </ion-content>
 </ion-view>
